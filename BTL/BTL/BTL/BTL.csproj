@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB751B85-24F8-4F78-AF94-DFC59EAC5A28}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BTL</RootNamespace>
+    <AssemblyName>BTL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaoCao\CrystalReportKH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportKH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaoCao\CrystalReportSP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BUS\BUS_DatHang.cs" />
+    <Compile Include="BUS\BUS_KhachHang.cs" />
+    <Compile Include="BUS\BUS_Login.cs" />
+    <Compile Include="BUS\BUS_SanPham.cs" />
+    <Compile Include="ChiTietDonHang.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DAO_DatHang.cs" />
+    <Compile Include="DAO\DAO_KhachHang.cs" />
+    <Compile Include="DAO\DAO_Login.cs" />
+    <Compile Include="DAO\Dao_SanPham.cs" />
+    <Compile Include="DatHang.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FCTDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCTDatHang.Designer.cs">
+      <DependentUpon>FCTDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCTDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCTDH.Designer.cs">
+      <DependentUpon>FCTDH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDonHang.Designer.cs">
+      <DependentUpon>FDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FKhachHang.Designer.cs">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FQuanLi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQuanLi.Designer.cs">
+      <DependentUpon>FQuanLi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FReportDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReportDH.Designer.cs">
+      <DependentUpon>FReportDH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FReportKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReportKH.Designer.cs">
+      <DependentUpon>FReportKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FReportSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReportSP.Designer.cs">
+      <DependentUpon>FReportSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSanPham.Designer.cs">
+      <DependentUpon>FSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loai.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCap.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLNH.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNH.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLNH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLNH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNH.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SanPham.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_TimSP_Result.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToanBoSP_Result.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaoCao\CrystalReportKH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportKH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\CrystalReportSP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCTDatHang.resx">
+      <DependentUpon>FCTDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCTDH.resx">
+      <DependentUpon>FCTDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDonHang.resx">
+      <DependentUpon>FDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FKhachHang.resx">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FQuanLi.resx">
+      <DependentUpon>FQuanLi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReportDH.resx">
+      <DependentUpon>FReportDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReportKH.resx">
+      <DependentUpon>FReportKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReportSP.resx">
+      <DependentUpon>FReportSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSanPham.resx">
+      <DependentUpon>FSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="QLNH.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLNH.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QLNH.edmx.diagram">
+      <DependentUpon>QLNH.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QLNH.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QLNH.Context.cs</LastGenOutput>
+      <DependentUpon>QLNH.edmx</DependentUpon>
+    </Content>
+    <Content Include="QLNH.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNH.edmx</DependentUpon>
+      <LastGenOutput>QLNH.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\free-icons-round-up-84.jpg" />
+    <None Include="Resources\Upload.png" />
+    <None Include="Resources\Stop.png" />
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
